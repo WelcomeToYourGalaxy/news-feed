@@ -1,1595 +1,2533 @@
 {
-  "_note": [
-    "Sources for the news wire.",
-    "",
-    "This is a feed ABOUT the news industry, not a news feed. Ordinary reporting",
-    "is refused by the subject gate — every term carries the industry words it",
-    "must appear beside.",
-    "",
-    "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
-    "  Nothing invented — an untested feed URL reports itself unreachable on every",
-    "  harvest and quietly makes the coverage figure a lie.",
-    "",
-    "gnews: Google News locale searches; the harvester builds the URL from",
-    "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
-    "",
-    "events: subject searches for the monitors, indices and recurring reports.",
-    "",
-    "standing is provenance, not importance:",
-    "  official  regulators, courts, UN bodies and rapporteurs",
-    "  research  media monitoring, ownership and trust research",
-    "  press     general news across the locales",
-    "  rights    press freedom and journalist organisations",
-    "",
-    "Worth adding, with URLs you have opened: Reporters Without Borders, the",
-    "Committee to Protect Journalists, IPI, IFJ, the Reuters Institute, NewsGuard,",
-    "Nieman Lab, Press Gazette, the Media Freedom Rapid Response and Rest of World.",
-    "This subject has better specialist sources than almost any other here."
-  ],
-  "direct": [
-    {
-      "name": "OHCHR — news",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.ohchr.org/en/rss/news"
-    },
-    {
-      "name": "UN News — Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
-    },
-    {
-      "name": "UN Special Procedures",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.ohchr.org/en/rss/special-procedures"
-    },
-    {
-      "name": "European Court of Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.echr.coe.int/rss"
-    },
-    {
-      "name": "European Commission",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://ec.europa.eu/commission/presscorner/api/rss"
-    },
-    {
-      "name": "Inter-American Commission on Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.oas.org/en/iachr/rss/rss_pr.xml"
-    },
-    {
-      "name": "US Department of Justice",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
-    },
-    {
-      "name": "OECD",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.oecd.org/newsroom/index.xml"
-    },
-    {
-      "name": "Freedom House",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://freedomhouse.org/rss.xml"
-    },
-    {
-      "name": "CIVICUS Monitor",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://monitor.civicus.org/feed/"
-    },
-    {
-      "name": "Bellingcat",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.bellingcat.com/feed/"
-    },
-    {
-      "name": "Business & Human Rights Resource Centre",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.business-humanrights.org/en/rss/"
-    },
-    {
-      "name": "Transparency International",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.transparency.org/en/rss"
-    },
-    {
-      "name": "Corporate Europe Observatory",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://corporateeurope.org/en/rss.xml"
-    },
-    {
-      "name": "ODI",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://odi.org/en/feed/"
-    },
-    {
-      "name": "CEPR",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://cepr.org/rss.xml"
-    },
-    {
-      "name": "Article 19",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.article19.org/feed/"
-    },
-    {
-      "name": "Front Line Defenders",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.frontlinedefenders.org/rss.xml"
-    },
-    {
-      "name": "Access Now",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.accessnow.org/feed/"
-    },
-    {
-      "name": "EDRi",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://edri.org/feed/"
-    },
-    {
-      "name": "Privacy International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://privacyinternational.org/rss.xml"
-    },
-    {
-      "name": "Electronic Frontier Foundation",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.eff.org/rss/updates.xml"
-    },
-    {
-      "name": "Statewatch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.statewatch.org/rss/"
-    },
-    {
-      "name": "Human Rights Watch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.hrw.org/rss/news"
-    },
-    {
-      "name": "Amnesty International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.amnesty.org/en/rss/"
-    },
-    {
-      "name": "World Organisation Against Torture (OMCT)",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.omct.org/en/rss"
-    },
-    {
-      "name": "Global Witness",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.globalwitness.org/en/rss/"
-    },
-    {
-      "name": "The Intercept",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://theintercept.com/feed/?rss"
-    },
-    {
-      "name": "The Marshall Project",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://www.themarshallproject.org/rss/recent.rss"
-    }
-  ],
-  "gnews": [
-    {
-      "label": "English (US) 1",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "English (US) 2",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "English (US) 3",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "English (UK) 4",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "English (UK) 5",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "English (UK) 6",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "English (India) 7",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "English (India) 8",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "English (India) 9",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "English (Nigeria) 10",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "English (Nigeria) 11",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "English (Nigeria) 12",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "English (South Africa) 13",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "English (South Africa) 14",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "English (South Africa) 15",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "English (Australia) 16",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "English (Australia) 17",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "English (Australia) 18",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    },
-    {
-      "label": "English (Kenya) 19",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"state media\" expansion OR propaganda funding OR foreign agent media law"
-    },
-    {
-      "label": "English (Kenya) 20",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"enemy of the people\" press OR smear campaign journalist"
-    },
-    {
-      "label": "English (Kenya) 21",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "paywall OR subscription news publisher decline"
-    },
-    {
-      "label": "English (Philippines) 22",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"investigative journalism\" consortium OR cross-border investigation leak"
-    },
-    {
-      "label": "English (Philippines) 23",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "defamation suit outlet OR libel ruling chilling effect"
-    },
-    {
-      "label": "English (Philippines) 24",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"journalist union\" OR newsroom strike OR collective bargaining media"
-    },
-    {
-      "label": "Spanish (Spain) 25",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "Spanish (Spain) 26",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "Spanish (Spain) 27",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "Spanish (Mexico) 28",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "Spanish (Mexico) 29",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "Spanish (Mexico) 30",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "Spanish (Argentina) 31",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "Spanish (Argentina) 32",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "Spanish (Argentina) 33",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "Spanish (Colombia) 34",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "Spanish (Colombia) 35",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "Spanish (Colombia) 36",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "French (France) 37",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "French (France) 38",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "French (France) 39",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "French (Senegal) 40",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "French (Senegal) 41",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "French (Senegal) 42",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    },
-    {
-      "label": "French (Canada) 43",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"state media\" expansion OR propaganda funding OR foreign agent media law"
-    },
-    {
-      "label": "French (Canada) 44",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"enemy of the people\" press OR smear campaign journalist"
-    },
-    {
-      "label": "French (Canada) 45",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "paywall OR subscription news publisher decline"
-    },
-    {
-      "label": "Portuguese (Brazil) 46",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"investigative journalism\" consortium OR cross-border investigation leak"
-    },
-    {
-      "label": "Portuguese (Brazil) 47",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "defamation suit outlet OR libel ruling chilling effect"
-    },
-    {
-      "label": "Portuguese (Brazil) 48",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"journalist union\" OR newsroom strike OR collective bargaining media"
-    },
-    {
-      "label": "Portuguese (Portugal) 49",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "Portuguese (Portugal) 50",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "Portuguese (Portugal) 51",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "Portuguese (Angola) 52",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "Portuguese (Angola) 53",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "Portuguese (Angola) 54",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "German (Germany) 55",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "German (Germany) 56",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "German (Germany) 57",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "German (Austria) 58",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "German (Austria) 59",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "German (Austria) 60",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "Russian (Russia) 61",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "Russian (Russia) 62",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "Russian (Russia) 63",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "Russian (Kazakhstan) 64",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "Russian (Kazakhstan) 65",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "Russian (Kazakhstan) 66",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    },
-    {
-      "label": "Arabic (Egypt) 67",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"state media\" expansion OR propaganda funding OR foreign agent media law"
-    },
-    {
-      "label": "Arabic (Egypt) 68",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"enemy of the people\" press OR smear campaign journalist"
-    },
-    {
-      "label": "Arabic (Egypt) 69",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "paywall OR subscription news publisher decline"
-    },
-    {
-      "label": "Arabic (UAE) 70",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"investigative journalism\" consortium OR cross-border investigation leak"
-    },
-    {
-      "label": "Arabic (UAE) 71",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "defamation suit outlet OR libel ruling chilling effect"
-    },
-    {
-      "label": "Arabic (UAE) 72",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"journalist union\" OR newsroom strike OR collective bargaining media"
-    },
-    {
-      "label": "Arabic (Lebanon) 73",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "Arabic (Lebanon) 74",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "Arabic (Lebanon) 75",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "Chinese (Mainland) 76",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "Chinese (Mainland) 77",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "Chinese (Mainland) 78",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "Chinese (Taiwan) 79",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "Chinese (Taiwan) 80",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "Chinese (Taiwan) 81",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "Chinese (Hong Kong) 82",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "Chinese (Hong Kong) 83",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "Chinese (Hong Kong) 84",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "Hindi (India) 85",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "Hindi (India) 86",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "Hindi (India) 87",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "Bengali (Bangladesh) 88",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "Bengali (Bangladesh) 89",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "Bengali (Bangladesh) 90",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    },
-    {
-      "label": "Indonesian 91",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"state media\" expansion OR propaganda funding OR foreign agent media law"
-    },
-    {
-      "label": "Indonesian 92",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"enemy of the people\" press OR smear campaign journalist"
-    },
-    {
-      "label": "Indonesian 93",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "paywall OR subscription news publisher decline"
-    },
-    {
-      "label": "Japanese 94",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"investigative journalism\" consortium OR cross-border investigation leak"
-    },
-    {
-      "label": "Japanese 95",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "defamation suit outlet OR libel ruling chilling effect"
-    },
-    {
-      "label": "Japanese 96",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"journalist union\" OR newsroom strike OR collective bargaining media"
-    },
-    {
-      "label": "Korean 97",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "Korean 98",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "Korean 99",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "Turkish 100",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "Turkish 101",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "Turkish 102",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "Italian 103",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "Italian 104",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "Italian 105",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "Dutch 106",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "Dutch 107",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "Dutch 108",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "Polish 109",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "Polish 110",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "Polish 111",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "Swedish 112",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "Swedish 113",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "Swedish 114",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    },
-    {
-      "label": "Ukrainian 115",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"state media\" expansion OR propaganda funding OR foreign agent media law"
-    },
-    {
-      "label": "Ukrainian 116",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"enemy of the people\" press OR smear campaign journalist"
-    },
-    {
-      "label": "Ukrainian 117",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "paywall OR subscription news publisher decline"
-    },
-    {
-      "label": "Greek 118",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"investigative journalism\" consortium OR cross-border investigation leak"
-    },
-    {
-      "label": "Greek 119",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "defamation suit outlet OR libel ruling chilling effect"
-    },
-    {
-      "label": "Greek 120",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"journalist union\" OR newsroom strike OR collective bargaining media"
-    },
-    {
-      "label": "Persian 121",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "\"press freedom\" index OR ranking OR restrictions"
-    },
-    {
-      "label": "Persian 122",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "journalist jailed OR detained OR sentenced OR charged"
-    },
-    {
-      "label": "Persian 123",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "journalist killed OR murdered OR impunity index"
-    },
-    {
-      "label": "Vietnamese 124",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"media ownership\" concentration OR takeover OR editorial independence"
-    },
-    {
-      "label": "Vietnamese 125",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"news desert\" OR \"local news\" closure OR newsroom layoffs"
-    },
-    {
-      "label": "Vietnamese 126",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"content farm\" OR \"AI-generated\" news site OR NewsGuard"
-    },
-    {
-      "label": "Thai 127",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"influence operation\" OR \"troll farm\" OR coordinated inauthentic behaviour"
-    },
-    {
-      "label": "Thai 128",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "disinformation campaign industry OR front group OR manufactured doubt"
-    },
-    {
-      "label": "Thai 129",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"fact-check\" OR media literacy OR prebunking programme"
-    },
-    {
-      "label": "Swahili (Kenya) 130",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"media bias\" OR \"trust in news\" OR news avoidance report"
-    },
-    {
-      "label": "Swahili (Kenya) 131",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "SLAPP OR \"strategic lawsuit\" OR anti-SLAPP journalist"
-    },
-    {
-      "label": "Swahili (Kenya) 132",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "spyware journalist OR Pegasus targeted reporter OR surveillance newsroom"
-    },
-    {
-      "label": "Amharic (Ethiopia) 133",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"internet shutdown\" OR outlet blocked OR broadcast licence revoked"
-    },
-    {
-      "label": "Amharic (Ethiopia) 134",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"source protection\" OR shield law OR subpoena journalist records"
-    },
-    {
-      "label": "Amharic (Ethiopia) 135",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"public broadcaster\" funding OR licence fee OR independence board"
-    },
-    {
-      "label": "Hausa (Nigeria) 136",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"bargaining code\" OR link tax OR publishers licensing AI content"
-    },
-    {
-      "label": "Hausa (Nigeria) 137",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"referral traffic\" publishers OR algorithm change news reach"
-    },
-    {
-      "label": "Hausa (Nigeria) 138",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"private equity\" newspaper OR hedge fund local news"
-    }
-  ],
-  "events": [
-    {
-      "label": "Press freedom monitoring",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"Reporters Without Borders\" OR \"Committee to Protect Journalists\" report OR press freedom index"
-    },
-    {
-      "label": "UN and rapporteur findings",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"special rapporteur\" freedom of expression OR UNESCO journalist safety report"
-    },
-    {
-      "label": "Court rulings on media",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "European Court ruling journalist OR press freedom judgment OR source protection ruling"
-    },
-    {
-      "label": "Regulator decisions",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "media regulator ruling OR broadcast licence revoked OR press council complaint upheld"
-    },
-    {
-      "label": "Detentions and prosecutions",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "journalist sentenced OR charged espionage OR newsroom raided"
-    },
-    {
-      "label": "Killings and impunity",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "journalist killed investigation OR impunity index murder journalist"
-    },
-    {
-      "label": "Content farm tracking",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "NewsGuard AI content farm OR unreliable AI-generated news sites count"
-    },
-    {
-      "label": "Ownership research",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "media ownership concentration study OR media plurality review"
-    },
-    {
-      "label": "Newsroom economics",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "newsroom jobs decline OR local news closures data OR news deserts report"
-    },
-    {
-      "label": "Trust and consumption",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"Digital News Report\" OR Reuters Institute trust OR news avoidance study"
-    },
-    {
-      "label": "Influence operation takedowns",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "platform takedown coordinated inauthentic OR attributed influence operation report"
-    },
-    {
-      "label": "Spyware and surveillance",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "Pegasus journalist forensic OR spyware targeting reporters investigation"
-    },
-    {
-      "label": "SLAPP and legal threats",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "anti-SLAPP directive OR legal threats journalists report"
-    },
-    {
-      "label": "Press freedom campaigning",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "press freedom campaign OR journalist union action OR media freedom coalition"
-    },
-    {
-      "label": "Platform and publisher disputes",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "publishers AI licensing dispute OR news bargaining negotiation platform"
-    },
-    {
-      "label": "Disinformation policy",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "disinformation code of practice OR information integrity policy OR DSA systemic risk"
-    }
-  ]
+ "_note": [
+  "Sources for the news wire.",
+  "",
+  "This is a feed ABOUT the news industry, not a news feed. Ordinary reporting",
+  "is refused by the subject gate — every term carries the industry words it",
+  "must appear beside.",
+  "",
+  "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
+  "  Nothing invented — an untested feed URL reports itself unreachable on every",
+  "  harvest and quietly makes the coverage figure a lie.",
+  "",
+  "gnews: Google News locale searches; the harvester builds the URL from",
+  "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
+  "",
+  "events: subject searches for the monitors, indices and recurring reports.",
+  "",
+  "standing is provenance, not importance:",
+  "  official  regulators, courts, UN bodies and rapporteurs",
+  "  research  media monitoring, ownership and trust research",
+  "  press     general news across the locales",
+  "  rights    press freedom and journalist organisations",
+  "",
+  "Worth adding, with URLs you have opened: Reporters Without Borders, the",
+  "Committee to Protect Journalists, IPI, IFJ, the Reuters Institute, NewsGuard,",
+  "Nieman Lab, Press Gazette, the Media Freedom Rapid Response and Rest of World.",
+  "This subject has better specialist sources than almost any other here."
+ ],
+ "direct": [
+  {
+   "name": "OHCHR — news",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.ohchr.org/en/rss/news"
+  },
+  {
+   "name": "UN News — Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
+  },
+  {
+   "name": "UN Special Procedures",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.ohchr.org/en/rss/special-procedures"
+  },
+  {
+   "name": "European Court of Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.echr.coe.int/rss"
+  },
+  {
+   "name": "European Commission",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://ec.europa.eu/commission/presscorner/api/rss"
+  },
+  {
+   "name": "Inter-American Commission on Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.oas.org/en/iachr/rss/rss_pr.xml"
+  },
+  {
+   "name": "US Department of Justice",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
+  },
+  {
+   "name": "OECD",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.oecd.org/newsroom/index.xml"
+  },
+  {
+   "name": "Freedom House",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://freedomhouse.org/rss.xml"
+  },
+  {
+   "name": "CIVICUS Monitor",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://monitor.civicus.org/feed/"
+  },
+  {
+   "name": "Bellingcat",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.bellingcat.com/feed/"
+  },
+  {
+   "name": "Business & Human Rights Resource Centre",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.business-humanrights.org/en/rss/"
+  },
+  {
+   "name": "Transparency International",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.transparency.org/en/rss"
+  },
+  {
+   "name": "Corporate Europe Observatory",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://corporateeurope.org/en/rss.xml"
+  },
+  {
+   "name": "ODI",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://odi.org/en/feed/"
+  },
+  {
+   "name": "CEPR",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://cepr.org/rss.xml"
+  },
+  {
+   "name": "Article 19",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.article19.org/feed/"
+  },
+  {
+   "name": "Front Line Defenders",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.frontlinedefenders.org/rss.xml"
+  },
+  {
+   "name": "Access Now",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.accessnow.org/feed/"
+  },
+  {
+   "name": "EDRi",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://edri.org/feed/"
+  },
+  {
+   "name": "Privacy International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://privacyinternational.org/rss.xml"
+  },
+  {
+   "name": "Electronic Frontier Foundation",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.eff.org/rss/updates.xml"
+  },
+  {
+   "name": "Statewatch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.statewatch.org/rss/"
+  },
+  {
+   "name": "Human Rights Watch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.hrw.org/rss/news"
+  },
+  {
+   "name": "Amnesty International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.amnesty.org/en/rss/"
+  },
+  {
+   "name": "World Organisation Against Torture (OMCT)",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.omct.org/en/rss"
+  },
+  {
+   "name": "Global Witness",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.globalwitness.org/en/rss/"
+  },
+  {
+   "name": "The Intercept",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://theintercept.com/feed/?rss"
+  },
+  {
+   "name": "The Marshall Project",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://www.themarshallproject.org/rss/recent.rss"
+  }
+ ],
+ "gnews": [
+  {
+   "label": "English (US) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (US) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (US) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (US) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (US) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (US) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (US) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "English (UK) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (UK) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (UK) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (UK) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (UK) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (UK) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (UK) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "English (India) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (India) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (India) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (India) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (India) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (India) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (India) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "English (Nigeria) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (Nigeria) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (Nigeria) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (Nigeria) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (Nigeria) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (Nigeria) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (Nigeria) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "English (Australia) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (Australia) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (Australia) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (Australia) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (Australia) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (Australia) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (Australia) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "English (South Africa) · ownership",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "ownership",
+   "query": "media ownership concentration OR newspaper bought by billionaire OR media merger regulator"
+  },
+  {
+   "label": "English (South Africa) · pressfreedom",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "pressfreedom",
+   "query": "press freedom index OR journalists under pressure OR media law restricting reporting"
+  },
+  {
+   "label": "English (South Africa) · jailings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "jailings",
+   "query": "journalist jailed OR reporter detained OR press card revoked prosecution"
+  },
+  {
+   "label": "English (South Africa) · killings",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "killings",
+   "query": "journalist killed OR reporter shot dead OR media worker murdered impunity"
+  },
+  {
+   "label": "English (South Africa) · censorship",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "censorship",
+   "query": "news site blocked OR broadcaster licence revoked OR censorship order media"
+  },
+  {
+   "label": "English (South Africa) · statedisinfo",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "statedisinfo",
+   "query": "state disinformation campaign OR troll farm operation OR coordinated inauthentic behaviour"
+  },
+  {
+   "label": "English (South Africa) · jobs",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "jobs",
+   "query": "newsroom layoffs OR local paper closes OR news desert study"
+  },
+  {
+   "label": "Español (España) · ownership",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "ownership",
+   "query": "concentración de medios OR periódico comprado por magnate OR fusión de medios regulador"
+  },
+  {
+   "label": "Español (España) · pressfreedom",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "pressfreedom",
+   "query": "libertad de prensa informe OR periodistas bajo presión OR ley que restringe la prensa"
+  },
+  {
+   "label": "Español (España) · jailings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "jailings",
+   "query": "periodista encarcelado OR reportero detenido OR proceso judicial contra periodista"
+  },
+  {
+   "label": "Español (España) · killings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "killings",
+   "query": "periodista asesinado OR reportero muerto a tiros OR impunidad asesinato periodista"
+  },
+  {
+   "label": "Español (España) · censorship",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "censorship",
+   "query": "sitio de noticias bloqueado OR licencia de emisora revocada OR orden de censura medios"
+  },
+  {
+   "label": "Español (España) · statedisinfo",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "statedisinfo",
+   "query": "campaña de desinformación estatal OR granja de trolls OR comportamiento inauténtico coordinado"
+  },
+  {
+   "label": "Español (España) · jobs",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "jobs",
+   "query": "despidos en redacciones OR cierre de periódico local OR desiertos informativos"
+  },
+  {
+   "label": "Español (México) · ownership",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "ownership",
+   "query": "concentración de medios OR periódico comprado por magnate OR fusión de medios regulador"
+  },
+  {
+   "label": "Español (México) · pressfreedom",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "pressfreedom",
+   "query": "libertad de prensa informe OR periodistas bajo presión OR ley que restringe la prensa"
+  },
+  {
+   "label": "Español (México) · jailings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "jailings",
+   "query": "periodista encarcelado OR reportero detenido OR proceso judicial contra periodista"
+  },
+  {
+   "label": "Español (México) · killings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "killings",
+   "query": "periodista asesinado OR reportero muerto a tiros OR impunidad asesinato periodista"
+  },
+  {
+   "label": "Español (México) · censorship",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "censorship",
+   "query": "sitio de noticias bloqueado OR licencia de emisora revocada OR orden de censura medios"
+  },
+  {
+   "label": "Español (México) · statedisinfo",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "statedisinfo",
+   "query": "campaña de desinformación estatal OR granja de trolls OR comportamiento inauténtico coordinado"
+  },
+  {
+   "label": "Español (México) · jobs",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "jobs",
+   "query": "despidos en redacciones OR cierre de periódico local OR desiertos informativos"
+  },
+  {
+   "label": "Español (Argentina) · ownership",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "ownership",
+   "query": "concentración de medios OR periódico comprado por magnate OR fusión de medios regulador"
+  },
+  {
+   "label": "Español (Argentina) · pressfreedom",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "pressfreedom",
+   "query": "libertad de prensa informe OR periodistas bajo presión OR ley que restringe la prensa"
+  },
+  {
+   "label": "Español (Argentina) · jailings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "jailings",
+   "query": "periodista encarcelado OR reportero detenido OR proceso judicial contra periodista"
+  },
+  {
+   "label": "Español (Argentina) · killings",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "killings",
+   "query": "periodista asesinado OR reportero muerto a tiros OR impunidad asesinato periodista"
+  },
+  {
+   "label": "Español (Argentina) · censorship",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "censorship",
+   "query": "sitio de noticias bloqueado OR licencia de emisora revocada OR orden de censura medios"
+  },
+  {
+   "label": "Español (Argentina) · statedisinfo",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "statedisinfo",
+   "query": "campaña de desinformación estatal OR granja de trolls OR comportamiento inauténtico coordinado"
+  },
+  {
+   "label": "Español (Argentina) · jobs",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "jobs",
+   "query": "despidos en redacciones OR cierre de periódico local OR desiertos informativos"
+  },
+  {
+   "label": "Português (Brasil) · ownership",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "ownership",
+   "query": "concentração dos media OR jornal comprado por bilionário OR fusão de meios de comunicação"
+  },
+  {
+   "label": "Português (Brasil) · pressfreedom",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "pressfreedom",
+   "query": "liberdade de imprensa relatório OR jornalistas sob pressão OR lei que restringe a imprensa"
+  },
+  {
+   "label": "Português (Brasil) · jailings",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "jailings",
+   "query": "jornalista preso OR repórter detido OR processo contra jornalista"
+  },
+  {
+   "label": "Português (Brasil) · killings",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "killings",
+   "query": "jornalista assassinado OR repórter morto a tiros OR impunidade jornalista"
+  },
+  {
+   "label": "Português (Brasil) · censorship",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "censorship",
+   "query": "site de notícias bloqueado OR licença de emissora cassada OR ordem de censura"
+  },
+  {
+   "label": "Português (Brasil) · statedisinfo",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "statedisinfo",
+   "query": "campanha de desinformação estatal OR fazenda de trolls OR comportamento inautêntico coordenado"
+  },
+  {
+   "label": "Português (Brasil) · jobs",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "jobs",
+   "query": "demissões em redações OR fecho de jornal local OR desertos de notícias"
+  },
+  {
+   "label": "Português (Portugal) · ownership",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "ownership",
+   "query": "concentração dos media OR jornal comprado por bilionário OR fusão de meios de comunicação"
+  },
+  {
+   "label": "Português (Portugal) · pressfreedom",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "pressfreedom",
+   "query": "liberdade de imprensa relatório OR jornalistas sob pressão OR lei que restringe a imprensa"
+  },
+  {
+   "label": "Português (Portugal) · jailings",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "jailings",
+   "query": "jornalista preso OR repórter detido OR processo contra jornalista"
+  },
+  {
+   "label": "Português (Portugal) · killings",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "killings",
+   "query": "jornalista assassinado OR repórter morto a tiros OR impunidade jornalista"
+  },
+  {
+   "label": "Português (Portugal) · censorship",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "censorship",
+   "query": "site de notícias bloqueado OR licença de emissora cassada OR ordem de censura"
+  },
+  {
+   "label": "Português (Portugal) · statedisinfo",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "statedisinfo",
+   "query": "campanha de desinformação estatal OR fazenda de trolls OR comportamento inautêntico coordenado"
+  },
+  {
+   "label": "Português (Portugal) · jobs",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "jobs",
+   "query": "demissões em redações OR fecho de jornal local OR desertos de notícias"
+  },
+  {
+   "label": "Français · ownership",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "ownership",
+   "query": "concentration des médias OR journal racheté par un milliardaire OR fusion de médias"
+  },
+  {
+   "label": "Français · pressfreedom",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "pressfreedom",
+   "query": "liberté de la presse rapport OR journalistes sous pression OR loi restreignant la presse"
+  },
+  {
+   "label": "Français · jailings",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "jailings",
+   "query": "journaliste emprisonné OR reporter détenu OR poursuites contre un journaliste"
+  },
+  {
+   "label": "Français · killings",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "killings",
+   "query": "journaliste tué OR reporter abattu OR impunité meurtre de journaliste"
+  },
+  {
+   "label": "Français · censorship",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "censorship",
+   "query": "site d'information bloqué OR licence de diffusion retirée OR ordre de censure"
+  },
+  {
+   "label": "Français · statedisinfo",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "statedisinfo",
+   "query": "campagne de désinformation étatique OR ferme à trolls OR comportement inauthentique coordonné"
+  },
+  {
+   "label": "Français · jobs",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "jobs",
+   "query": "licenciements dans les rédactions OR fermeture de journal local OR déserts d'information"
+  },
+  {
+   "label": "Français (Canada) · ownership",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "ownership",
+   "query": "concentration des médias OR journal racheté par un milliardaire OR fusion de médias"
+  },
+  {
+   "label": "Français (Canada) · pressfreedom",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "pressfreedom",
+   "query": "liberté de la presse rapport OR journalistes sous pression OR loi restreignant la presse"
+  },
+  {
+   "label": "Français (Canada) · jailings",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "jailings",
+   "query": "journaliste emprisonné OR reporter détenu OR poursuites contre un journaliste"
+  },
+  {
+   "label": "Français (Canada) · killings",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "killings",
+   "query": "journaliste tué OR reporter abattu OR impunité meurtre de journaliste"
+  },
+  {
+   "label": "Français (Canada) · censorship",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "censorship",
+   "query": "site d'information bloqué OR licence de diffusion retirée OR ordre de censure"
+  },
+  {
+   "label": "Français (Canada) · statedisinfo",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "statedisinfo",
+   "query": "campagne de désinformation étatique OR ferme à trolls OR comportement inauthentique coordonné"
+  },
+  {
+   "label": "Français (Canada) · jobs",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "jobs",
+   "query": "licenciements dans les rédactions OR fermeture de journal local OR déserts d'information"
+  },
+  {
+   "label": "Deutsch · ownership",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "ownership",
+   "query": "Medienkonzentration OR Zeitung von Milliardär gekauft OR Medienfusion Kartellamt"
+  },
+  {
+   "label": "Deutsch · pressfreedom",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "pressfreedom",
+   "query": "Pressefreiheit Bericht OR Journalisten unter Druck OR Gesetz schränkt Presse ein"
+  },
+  {
+   "label": "Deutsch · jailings",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "jailings",
+   "query": "Journalist inhaftiert OR Reporter festgenommen OR Anklage gegen Journalisten"
+  },
+  {
+   "label": "Deutsch · killings",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "killings",
+   "query": "Journalist getötet OR Reporter erschossen OR Straflosigkeit Mord Journalist"
+  },
+  {
+   "label": "Deutsch · censorship",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "censorship",
+   "query": "Nachrichtenseite gesperrt OR Sendelizenz entzogen OR Zensuranordnung Medien"
+  },
+  {
+   "label": "Deutsch · statedisinfo",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "statedisinfo",
+   "query": "staatliche Desinformationskampagne OR Trollfabrik OR koordiniertes unauthentisches Verhalten"
+  },
+  {
+   "label": "Deutsch · jobs",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "jobs",
+   "query": "Stellenabbau Redaktion OR Lokalzeitung eingestellt OR Nachrichtenwüste"
+  },
+  {
+   "label": "Italiano · ownership",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "ownership",
+   "query": "concentrazione dei media OR giornale acquistato da imprenditore OR fusione editoriale"
+  },
+  {
+   "label": "Italiano · pressfreedom",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "pressfreedom",
+   "query": "libertà di stampa rapporto OR giornalisti sotto pressione OR legge bavaglio"
+  },
+  {
+   "label": "Italiano · jailings",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "jailings",
+   "query": "giornalista incarcerato OR reporter arrestato OR processo a giornalista"
+  },
+  {
+   "label": "Italiano · killings",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "killings",
+   "query": "giornalista ucciso OR reporter assassinato"
+  },
+  {
+   "label": "Italiano · censorship",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "censorship",
+   "query": "sito di notizie bloccato OR licenza di trasmissione revocata OR ordine di censura"
+  },
+  {
+   "label": "Italiano · statedisinfo",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "statedisinfo",
+   "query": "campagna di disinformazione di Stato OR fabbrica di troll"
+  },
+  {
+   "label": "Italiano · jobs",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "jobs",
+   "query": "licenziamenti in redazione OR chiusura giornale locale"
+  },
+  {
+   "label": "Nederlands · ownership",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "ownership",
+   "query": "mediaconcentratie OR krant gekocht door miljardair OR mediafusie toezichthouder"
+  },
+  {
+   "label": "Nederlands · pressfreedom",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "pressfreedom",
+   "query": "persvrijheid rapport OR journalisten onder druk OR wet beperkt pers"
+  },
+  {
+   "label": "Nederlands · jobs",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "jobs",
+   "query": "ontslagen op redacties OR lokale krant stopt"
+  },
+  {
+   "label": "Polski · ownership",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "ownership",
+   "query": "koncentracja mediów OR gazeta kupiona przez miliardera OR fuzja medialna"
+  },
+  {
+   "label": "Polski · pressfreedom",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "pressfreedom",
+   "query": "wolność prasy raport OR dziennikarze pod presją OR ustawa ograniczająca media"
+  },
+  {
+   "label": "Polski · jailings",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "jailings",
+   "query": "dziennikarz aresztowany OR reporter zatrzymany"
+  },
+  {
+   "label": "Polski · statedisinfo",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "statedisinfo",
+   "query": "państwowa kampania dezinformacyjna OR farma trolli"
+  },
+  {
+   "label": "Polski · jobs",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "jobs",
+   "query": "zwolnienia w redakcjach OR zamknięcie lokalnej gazety"
+  },
+  {
+   "label": "Русский · ownership",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "ownership",
+   "query": "концентрация СМИ OR газета куплена миллиардером OR слияние медиакомпаний"
+  },
+  {
+   "label": "Русский · pressfreedom",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "pressfreedom",
+   "query": "свобода прессы доклад OR давление на журналистов OR закон ограничивает СМИ"
+  },
+  {
+   "label": "Русский · jailings",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "jailings",
+   "query": "журналист арестован OR репортёр задержан OR дело против журналиста"
+  },
+  {
+   "label": "Русский · killings",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "killings",
+   "query": "журналист убит OR репортёр застрелен"
+  },
+  {
+   "label": "Русский · censorship",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "censorship",
+   "query": "новостной сайт заблокирован OR лицензия отозвана вещатель OR цензура СМИ"
+  },
+  {
+   "label": "Русский · statedisinfo",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "statedisinfo",
+   "query": "государственная дезинформация кампания OR фабрика троллей"
+  },
+  {
+   "label": "Русский · jobs",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "jobs",
+   "query": "сокращения в редакциях OR закрытие местной газеты"
+  },
+  {
+   "label": "Українська · ownership",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "ownership",
+   "query": "концентрація ЗМІ OR газету купив мільярдер OR злиття медіакомпаній"
+  },
+  {
+   "label": "Українська · pressfreedom",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "pressfreedom",
+   "query": "свобода преси звіт OR тиск на журналістів OR закон обмежує ЗМІ"
+  },
+  {
+   "label": "Українська · jailings",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "jailings",
+   "query": "журналіста затримано OR справа проти журналіста"
+  },
+  {
+   "label": "Українська · censorship",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "censorship",
+   "query": "новинний сайт заблоковано OR ліцензію відкликано мовник"
+  },
+  {
+   "label": "Українська · statedisinfo",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "statedisinfo",
+   "query": "державна дезінформаційна кампанія OR фабрика тролів"
+  },
+  {
+   "label": "Türkçe · ownership",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "ownership",
+   "query": "medyada tekelleşme OR gazete satın alındı patron OR medya birleşmesi"
+  },
+  {
+   "label": "Türkçe · pressfreedom",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "pressfreedom",
+   "query": "basın özgürlüğü raporu OR gazeteciler baskı altında OR basını kısıtlayan yasa"
+  },
+  {
+   "label": "Türkçe · jailings",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "jailings",
+   "query": "gazeteci tutuklandı OR muhabir gözaltına alındı"
+  },
+  {
+   "label": "Türkçe · killings",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "killings",
+   "query": "gazeteci öldürüldü OR muhabir vuruldu"
+  },
+  {
+   "label": "Türkçe · censorship",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "censorship",
+   "query": "haber sitesi engellendi OR yayın lisansı iptal OR sansür kararı"
+  },
+  {
+   "label": "Türkçe · statedisinfo",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "statedisinfo",
+   "query": "devlet destekli dezenformasyon OR troll çiftliği"
+  },
+  {
+   "label": "Bahasa Indonesia · ownership",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "ownership",
+   "query": "konsentrasi kepemilikan media OR media dibeli konglomerat"
+  },
+  {
+   "label": "Bahasa Indonesia · pressfreedom",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "pressfreedom",
+   "query": "kebebasan pers laporan OR jurnalis ditekan OR undang-undang membatasi pers"
+  },
+  {
+   "label": "Bahasa Indonesia · jailings",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "jailings",
+   "query": "jurnalis ditahan OR wartawan dipenjara"
+  },
+  {
+   "label": "Bahasa Indonesia · killings",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "killings",
+   "query": "jurnalis dibunuh OR wartawan tewas ditembak"
+  },
+  {
+   "label": "Bahasa Indonesia · censorship",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "censorship",
+   "query": "situs berita diblokir OR izin siaran dicabut OR perintah sensor"
+  },
+  {
+   "label": "Bahasa Indonesia · statedisinfo",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "statedisinfo",
+   "query": "kampanye disinformasi negara OR pasukan siber buzzer"
+  },
+  {
+   "label": "Tiếng Việt · pressfreedom",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "pressfreedom",
+   "query": "tự do báo chí báo cáo OR nhà báo bị gây sức ép"
+  },
+  {
+   "label": "Tiếng Việt · jailings",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "jailings",
+   "query": "nhà báo bị bắt OR phóng viên bị giam"
+  },
+  {
+   "label": "Tiếng Việt · censorship",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "censorship",
+   "query": "trang tin bị chặn OR thu hồi giấy phép phát sóng"
+  },
+  {
+   "label": "ไทย · pressfreedom",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "pressfreedom",
+   "query": "เสรีภาพสื่อ รายงาน OR นักข่าวถูกกดดัน"
+  },
+  {
+   "label": "ไทย · jailings",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "jailings",
+   "query": "นักข่าวถูกจับ OR ผู้สื่อข่าวถูกคุมขัง"
+  },
+  {
+   "label": "ไทย · censorship",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "censorship",
+   "query": "เว็บข่าวถูกบล็อก OR เพิกถอนใบอนุญาตออกอากาศ"
+  },
+  {
+   "label": "日本語 · ownership",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "ownership",
+   "query": "メディア集中 OR 新聞社 買収 OR 報道機関 統合"
+  },
+  {
+   "label": "日本語 · pressfreedom",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "pressfreedom",
+   "query": "報道の自由度 ランキング OR ジャーナリストへの圧力 OR 報道規制 法案"
+  },
+  {
+   "label": "日本語 · jailings",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "jailings",
+   "query": "記者 逮捕 OR ジャーナリスト 拘束"
+  },
+  {
+   "label": "日本語 · censorship",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "censorship",
+   "query": "ニュースサイト 遮断 OR 放送免許 取り消し OR 検閲 命令"
+  },
+  {
+   "label": "日本語 · statedisinfo",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "statedisinfo",
+   "query": "国家 偽情報 工作 OR トロールファーム"
+  },
+  {
+   "label": "日本語 · jobs",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "jobs",
+   "query": "新聞社 人員削減 OR 地方紙 休刊"
+  },
+  {
+   "label": "한국어 · ownership",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "ownership",
+   "query": "언론 소유 집중 OR 신문사 인수 OR 미디어 합병"
+  },
+  {
+   "label": "한국어 · pressfreedom",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "pressfreedom",
+   "query": "언론 자유 지수 OR 기자 압박 OR 언론 규제 법안"
+  },
+  {
+   "label": "한국어 · jailings",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "jailings",
+   "query": "기자 구속 OR 언론인 체포"
+  },
+  {
+   "label": "한국어 · censorship",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "censorship",
+   "query": "뉴스 사이트 차단 OR 방송 허가 취소 OR 검열 명령"
+  },
+  {
+   "label": "한국어 · statedisinfo",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "statedisinfo",
+   "query": "국가 주도 허위정보 OR 댓글 조작 조직"
+  },
+  {
+   "label": "한국어 · jobs",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "jobs",
+   "query": "언론사 구조조정 OR 지역 신문 폐간"
+  },
+  {
+   "label": "中文 (台灣) · ownership",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "ownership",
+   "query": "媒體集中 OR 報紙被收購 富豪 OR 傳媒合併 監管"
+  },
+  {
+   "label": "中文 (台灣) · pressfreedom",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "pressfreedom",
+   "query": "新聞自由 指數 OR 記者受壓 OR 限制報道 法律"
+  },
+  {
+   "label": "中文 (台灣) · jailings",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "jailings",
+   "query": "記者 被捕 OR 新聞工作者 拘留"
+  },
+  {
+   "label": "中文 (台灣) · censorship",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "censorship",
+   "query": "新聞網站 被封 OR 吊銷 廣播牌照 OR 審查 命令"
+  },
+  {
+   "label": "中文 (台灣) · statedisinfo",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "statedisinfo",
+   "query": "國家 虛假資訊 行動 OR 網軍 水軍"
+  },
+  {
+   "label": "中文 (台灣) · jobs",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "jobs",
+   "query": "新聞編輯部 裁員 OR 地方報紙 停刊"
+  },
+  {
+   "label": "中文 (香港) · ownership",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "ownership",
+   "query": "媒體集中 OR 報紙被收購 富豪 OR 傳媒合併 監管"
+  },
+  {
+   "label": "中文 (香港) · pressfreedom",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "pressfreedom",
+   "query": "新聞自由 指數 OR 記者受壓 OR 限制報道 法律"
+  },
+  {
+   "label": "中文 (香港) · jailings",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "jailings",
+   "query": "記者 被捕 OR 新聞工作者 拘留"
+  },
+  {
+   "label": "中文 (香港) · censorship",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "censorship",
+   "query": "新聞網站 被封 OR 吊銷 廣播牌照 OR 審查 命令"
+  },
+  {
+   "label": "中文 (香港) · statedisinfo",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "statedisinfo",
+   "query": "國家 虛假信息 行動 OR 網軍 水軍"
+  },
+  {
+   "label": "中文 (香港) · jobs",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "jobs",
+   "query": "新聞編輯部 裁員 OR 地方報紙 停刊"
+  },
+  {
+   "label": "हिन्दी · pressfreedom",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "pressfreedom",
+   "query": "प्रेस की स्वतंत्रता सूचकांक OR पत्रकारों पर दबाव"
+  },
+  {
+   "label": "हिन्दी · jailings",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "jailings",
+   "query": "पत्रकार गिरफ्तार OR रिपोर्टर हिरासत में"
+  },
+  {
+   "label": "हिन्दी · killings",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "killings",
+   "query": "पत्रकार की हत्या OR रिपोर्टर की गोली मारकर हत्या"
+  },
+  {
+   "label": "বাংলা · pressfreedom",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "pressfreedom",
+   "query": "সংবাদপত্রের স্বাধীনতা প্রতিবেদন OR সাংবাদিকদের ওপর চাপ"
+  },
+  {
+   "label": "বাংলা · jailings",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "jailings",
+   "query": "সাংবাদিক গ্রেপ্তার OR প্রতিবেদক আটক"
+  },
+  {
+   "label": "বাংলা · killings",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "killings",
+   "query": "সাংবাদিক নিহত OR প্রতিবেদক হত্যা"
+  },
+  {
+   "label": "العربية (مصر) · ownership",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "ownership",
+   "query": "تركز ملكية الإعلام OR شراء صحيفة رجل أعمال OR اندماج إعلامي"
+  },
+  {
+   "label": "العربية (مصر) · pressfreedom",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "pressfreedom",
+   "query": "حرية الصحافة تقرير OR ضغوط على الصحفيين OR قانون يقيد الصحافة"
+  },
+  {
+   "label": "العربية (مصر) · jailings",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "jailings",
+   "query": "اعتقال صحفي OR سجن مراسل"
+  },
+  {
+   "label": "العربية (مصر) · killings",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "killings",
+   "query": "مقتل صحفي OR اغتيال مراسل OR إفلات من العقاب صحفي"
+  },
+  {
+   "label": "العربية (مصر) · censorship",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "censorship",
+   "query": "حجب موقع إخباري OR سحب ترخيص بث OR أمر رقابة"
+  },
+  {
+   "label": "العربية (مصر) · statedisinfo",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "statedisinfo",
+   "query": "حملة تضليل حكومية OR مزرعة ذباب إلكتروني"
+  },
+  {
+   "label": "العربية (الإمارات) · ownership",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "ownership",
+   "query": "تركز ملكية الإعلام OR شراء صحيفة رجل أعمال OR اندماج إعلامي"
+  },
+  {
+   "label": "العربية (الإمارات) · pressfreedom",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "pressfreedom",
+   "query": "حرية الصحافة تقرير OR ضغوط على الصحفيين OR قانون يقيد الصحافة"
+  },
+  {
+   "label": "العربية (الإمارات) · jailings",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "jailings",
+   "query": "اعتقال صحفي OR سجن مراسل"
+  },
+  {
+   "label": "العربية (الإمارات) · killings",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "killings",
+   "query": "مقتل صحفي OR اغتيال مراسل OR إفلات من العقاب صحفي"
+  },
+  {
+   "label": "العربية (الإمارات) · censorship",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "censorship",
+   "query": "حجب موقع إخباري OR سحب ترخيص بث OR أمر رقابة"
+  },
+  {
+   "label": "العربية (الإمارات) · statedisinfo",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "statedisinfo",
+   "query": "حملة تضليل حكومية OR مزرعة ذباب إلكتروني"
+  },
+  {
+   "label": "فارسی · pressfreedom",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "pressfreedom",
+   "query": "آزادی مطبوعات گزارش OR فشار بر روزنامه‌نگاران"
+  },
+  {
+   "label": "فارسی · jailings",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "jailings",
+   "query": "بازداشت روزنامه‌نگار OR زندانی شدن خبرنگار"
+  },
+  {
+   "label": "فارسی · censorship",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "censorship",
+   "query": "مسدودسازی سایت خبری OR لغو مجوز پخش"
+  },
+  {
+   "label": "Ελληνικά · ownership",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "ownership",
+   "query": "συγκέντρωση μέσων ενημέρωσης OR εφημερίδα εξαγοράστηκε"
+  },
+  {
+   "label": "Ελληνικά · pressfreedom",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "pressfreedom",
+   "query": "ελευθερία του Τύπου έκθεση OR πιέσεις σε δημοσιογράφους"
+  },
+  {
+   "label": "Ελληνικά · jailings",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "jailings",
+   "query": "δημοσιογράφος συνελήφθη OR κρατείται ρεπόρτερ"
+  },
+  {
+   "label": "Ελληνικά · killings",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "killings",
+   "query": "δολοφονία δημοσιογράφου"
+  },
+  {
+   "label": "Ελληνικά · censorship",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "censorship",
+   "query": "μπλόκο σε ειδησεογραφικό site OR ανάκληση άδειας εκπομπής"
+  },
+  {
+   "label": "Ελληνικά · statedisinfo",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "statedisinfo",
+   "query": "κρατική εκστρατεία παραπληροφόρησης OR φάρμα τρολ"
+  },
+  {
+   "label": "Svenska · ownership",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "ownership",
+   "query": "mediekoncentration OR tidning köpt av miljardär OR mediefusion"
+  },
+  {
+   "label": "Svenska · pressfreedom",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "pressfreedom",
+   "query": "pressfrihet rapport OR journalister under press"
+  },
+  {
+   "label": "Svenska · jobs",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "jobs",
+   "query": "uppsägningar på redaktioner OR lokaltidning läggs ned"
+  },
+  {
+   "label": "Kiswahili · pressfreedom",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "pressfreedom",
+   "query": "uhuru wa vyombo vya habari ripoti OR waandishi wa habari kubanwa"
+  },
+  {
+   "label": "Kiswahili · killings",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "killings",
+   "query": "mwandishi wa habari kuuawa"
+  },
+  {
+   "label": "English (US) · framing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "framing",
+   "query": "media framing study migrants OR dehumanising coverage analysis OR moral panic media study"
+  },
+  {
+   "label": "Español · framing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "framing",
+   "query": "estudio sobre el encuadre mediático de los migrantes OR cobertura deshumanizante análisis"
+  },
+  {
+   "label": "Português (BR) · framing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "framing",
+   "query": "estudo sobre o enquadramento mediático dos migrantes OR cobertura desumanizante análise"
+  },
+  {
+   "label": "Français · framing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "framing",
+   "query": "étude sur le cadrage médiatique des migrants OR couverture déshumanisante analyse"
+  },
+  {
+   "label": "Deutsch · framing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "framing",
+   "query": "Studie zur medialen Rahmung von Migranten OR entmenschlichende Berichterstattung Analyse"
+  },
+  {
+   "label": "Italiano · framing",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "framing",
+   "query": "studio sul framing mediatico dei migranti OR copertura disumanizzante analisi"
+  },
+  {
+   "label": "Русский · framing",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "framing",
+   "query": "исследование медийной подачи мигрантов OR обесчеловечивающее освещение анализ"
+  },
+  {
+   "label": "日本語 · framing",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "framing",
+   "query": "報道 フレーミング 研究 移民 OR 非人間化 報道 分析"
+  },
+  {
+   "label": "한국어 · framing",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "framing",
+   "query": "언론 프레이밍 연구 이주민 OR 비인간화 보도 분석"
+  },
+  {
+   "label": "中文 · framing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "framing",
+   "query": "媒體 框架 研究 移民 OR 去人性化 報道 分析"
+  },
+  {
+   "label": "English (US) · softnews",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "softnews",
+   "query": "soft news displacing hard news OR celebrity coverage share study OR clickbait share of front page"
+  },
+  {
+   "label": "Español · softnews",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "softnews",
+   "query": "información blanda desplaza a la dura OR peso de la prensa del corazón estudio"
+  },
+  {
+   "label": "Português (BR) · softnews",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "softnews",
+   "query": "informação leve desloca a informação séria OR peso do entretenimento nas notícias estudo"
+  },
+  {
+   "label": "Français · softnews",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "softnews",
+   "query": "information de divertissement remplace l'information sérieuse OR poids du people étude"
+  },
+  {
+   "label": "Deutsch · softnews",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "softnews",
+   "query": "Boulevardisierung der Nachrichten OR Anteil weicher Themen Studie"
+  },
+  {
+   "label": "Italiano · softnews",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "softnews",
+   "query": "notizie leggere al posto di quelle serie OR peso del gossip nei telegiornali studio"
+  },
+  {
+   "label": "日本語 · softnews",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "softnews",
+   "query": "ニュースの軟化 OR 芸能報道 割合 調査"
+  },
+  {
+   "label": "한국어 · softnews",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "softnews",
+   "query": "연성 뉴스 비중 증가 OR 연예 보도 비율 조사"
+  },
+  {
+   "label": "中文 · softnews",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "softnews",
+   "query": "新聞娛樂化 OR 娛樂報道 佔比 研究"
+  }
+ ],
+ "events": [
+  {
+   "label": "Press freedom monitoring",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"Reporters Without Borders\" OR \"Committee to Protect Journalists\" report OR press freedom index"
+  },
+  {
+   "label": "UN and rapporteur findings",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"special rapporteur\" freedom of expression OR UNESCO journalist safety report"
+  },
+  {
+   "label": "Court rulings on media",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "European Court ruling journalist OR press freedom judgment OR source protection ruling"
+  },
+  {
+   "label": "Regulator decisions",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "media regulator ruling OR broadcast licence revoked OR press council complaint upheld"
+  },
+  {
+   "label": "Detentions and prosecutions",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "journalist sentenced OR charged espionage OR newsroom raided"
+  },
+  {
+   "label": "Killings and impunity",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "journalist killed investigation OR impunity index murder journalist"
+  },
+  {
+   "label": "Content farm tracking",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "NewsGuard AI content farm OR unreliable AI-generated news sites count"
+  },
+  {
+   "label": "Ownership research",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "media ownership concentration study OR media plurality review"
+  },
+  {
+   "label": "Newsroom economics",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "newsroom jobs decline OR local news closures data OR news deserts report"
+  },
+  {
+   "label": "Trust and consumption",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"Digital News Report\" OR Reuters Institute trust OR news avoidance study"
+  },
+  {
+   "label": "Influence operation takedowns",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "platform takedown coordinated inauthentic OR attributed influence operation report"
+  },
+  {
+   "label": "Spyware and surveillance",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "Pegasus journalist forensic OR spyware targeting reporters investigation"
+  },
+  {
+   "label": "SLAPP and legal threats",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "anti-SLAPP directive OR legal threats journalists report"
+  },
+  {
+   "label": "Press freedom campaigning",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "press freedom campaign OR journalist union action OR media freedom coalition"
+  },
+  {
+   "label": "Platform and publisher disputes",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "publishers AI licensing dispute OR news bargaining negotiation platform"
+  },
+  {
+   "label": "Disinformation policy",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "disinformation code of practice OR information integrity policy OR DSA systemic risk"
+  }
+ ]
 }

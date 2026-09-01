@@ -41,13 +41,27 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
+# The shared gazetteer. Placement used to be each wire's own short country
+# table, which put most of every wire in a counter marked "unplaced"; this is
+# the fleet's common one, and it is optional at import so a harvest still runs
+# if the data file has not been fetched yet.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import galaxy_places
+    _GAZETTEER = True
+except Exception as _exc:                       # noqa: BLE001
+    print("  ! gazetteer unavailable (%s); falling back to the local table"
+          % _exc, file=sys.stderr)
+    galaxy_places = None
+    _GAZETTEER = False
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCES_PATH = os.path.join(HERE, "sources_news.json")
 OUT_PATH = os.path.join(HERE, "wire_news.json")
 
 RETAIN_DAYS = 45
 MAX_ITEMS = 1200
-WORKERS = 10         # a few hundred wires now
+WORKERS = 14         # 26 languages, each asked in its own
 NOTABLE_SCORE = 3       # at or above this a story is marked as consequential
 
 # --------------------------------------------------------------------------
@@ -71,9 +85,24 @@ def build_gnews_url(loc):
     return ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q) +
             "&hl=" + loc["hl"] + "&gl=" + loc["gl"] + "&ceid=" + loc["ceid"])
 
+READ_BUDGET_MIN = 40          # minutes spent reading wires
+
+# The wall-clock budget for reading wires. Past it the remaining sources are
+# recorded unreachable and the harvest finishes on what it has, because the
+# wire is only written at the end of run() and a job killed by the workflow
+# timeout commits nothing at all — which is how a feed gets stuck stale.
+DEADLINE = None
+
+
+def out_of_time():
+    return DEADLINE is not None and time.monotonic() > DEADLINE
+
+
 def fetch(url, tries=3):
     last = None
     for attempt in range(tries):
+        if out_of_time():
+            return None
         try:
             req = urllib.request.Request(url, headers={
                 "User-Agent": USER_AGENT,
@@ -86,6 +115,16 @@ def fetch(url, tries=3):
                 if resp.headers.get("Content-Encoding") == "gzip":
                     raw = gzip.GzipFile(fileobj=io.BytesIO(raw)).read()
                 return raw
+        except urllib.error.HTTPError as exc:
+            last = exc
+            # Being rate-limited or refused is an answer, not a hiccup. Trying
+            # the same query twice more against the same limiter spends eighty
+            # seconds of a worker slot to be told the same thing, and deepens
+            # the throttle for every other query in the run.
+            if exc.code in (403, 429, 451):
+                time.sleep(1.5)
+                break
+            time.sleep(1.5 * (attempt + 1))
         except Exception as exc:                       # noqa: BLE001 — report, don't crash the run
             last = exc
             time.sleep(1.5 * (attempt + 1))
@@ -792,6 +831,234 @@ DECIDED_C = _compile_all(DECIDED)
 INSTITUTIONAL_C = _compile_all(INSTITUTIONAL)
 MEASURED_C = _compile_all(MEASURED)
 PENDING_C = _compile_all(PENDING)
+# ------------------------------------------------------------------
+# The subjects, in the languages the queries now ask in.
+#
+# Built alongside the queries rather than after them: localised
+# queries against English-only subjects fetch stories the subject
+# gate then refuses, which reads as an improvement in the source
+# count and a worsening in everything else.
+# ------------------------------------------------------------------
+LOCAL_TERMS = {
+    "censorship": [
+        ("haber sitesi engellendi", None), ("izin siaran dicabut", None),
+        ("licence de diffusion", None), ("licencia de emisora", None),
+        ("licenza di trasmissione", None), ("licença de emissora", None),
+        ("nachrichtenseite gesperrt", None), ("ordem de censura", None),
+        ("orden de censura", None), ("ordine di censura", None),
+        ("ordre de censure", None), ("perintah sensor", None),
+        ("sansür kararı", None), ("sendelizenz entzogen", None),
+        ("site d'information bloqué", None), ("site de notícias", None),
+        ("sitio de noticias", None), ("sito di notizie", None),
+        ("situs berita diblokir", None), ("thu hồi giấy", None),
+        ("trang tin bị", None), ("yayın lisansı iptal", None),
+        ("zensuranordnung medien", None), ("ανάκληση άδειας εκπομπής", None),
+        ("μπλόκο σε ειδησεογραφικό", None), ("лицензия отозвана вещатель", None),
+        ("ліцензію відкликано мовник", None), ("новинний сайт заблоковано", None),
+        ("новостной сайт заблокирован", None), ("цензура сми", None),
+        ("أمر رقابة", None), ("حجب موقع إخباري", None),
+        ("سحب ترخيص بث", None), ("لغو مجوز پخش", None),
+        ("مسدودسازی سایت خبری", None), ("เพิกถอนใบอนุญาตออกอากาศ", None),
+        ("เว็บข่าวถูกบล็อก", None), ("ニュースサイト 遮断", None),
+        ("吊销 广播牌照", None), ("审查 命令", None),
+        ("放送免許 取り消し", None), ("新闻网站 被封", None),
+        ("検閲 命令", None), ("검열 명령", None),
+        ("뉴스 사이트 차단", None), ("방송 허가 취소", None),
+    ],
+    "jailings": [
+        ("anklage gegen journalisten", None), ("dziennikarz aresztowany", None),
+        ("gazeteci tutuklandı", None), ("giornalista incarcerato", None),
+        ("jornalista preso", None), ("journalist inhaftiert", None),
+        ("journaliste emprisonné", None), ("jurnalis ditahan", None),
+        ("muhabir gözaltına alındı", None), ("nhà báo bị", None),
+        ("periodista encarcelado", None), ("phóng viên bị", None),
+        ("poursuites contre un", None), ("proceso judicial contra", None),
+        ("processo a giornalista", None), ("processo contra jornalista", None),
+        ("reporter arrestato", None), ("reporter détenu", None),
+        ("reporter festgenommen", None), ("reporter zatrzymany", None),
+        ("reportero detenido", None), ("repórter detido", None),
+        ("wartawan dipenjara", None), ("δημοσιογράφος συνελήφθη", None),
+        ("κρατείται ρεπόρτερ", None), ("дело против журналиста", None),
+        ("журналист арестован", None), ("журналіста затримано", None),
+        ("репортёр задержан", None), ("справа проти журналіста", None),
+        ("اعتقال صحفي", None), ("بازداشت روزنامه‌نگار", None),
+        ("زندانی شدن خبرنگار", None), ("سجن مراسل", None),
+        ("पत्रकार गिरफ्तार", None), ("रिपोर्टर हिरासत में", None),
+        ("প্রতিবেদক আটক", None), ("সাংবাদিক গ্রেপ্তার", None),
+        ("นักข่าวถูกจับ", None), ("ผู้สื่อข่าวถูกคุมขัง", None),
+        ("ジャーナリスト 拘束", None), ("新闻工作者 拘留", None),
+        ("記者 逮捕", None), ("记者 被捕", None),
+        ("기자 구속", None), ("언론인 체포", None),
+    ],
+    "jobs": [
+        ("chiusura giornale locale", None), ("cierre de periódico", None),
+        ("demissões em redações", None), ("desertos de notícias", None),
+        ("desiertos informativos", None), ("despidos en redacciones", None),
+        ("déserts d'information", None), ("fecho de jornal", None),
+        ("fermeture de journal", None), ("licenciements dans les", None),
+        ("licenziamenti in redazione", None), ("lokale krant stopt", None),
+        ("lokaltidning läggs ned", None), ("lokalzeitung eingestellt", None),
+        ("nachrichtenwüste", None), ("ontslagen op redacties", None),
+        ("stellenabbau redaktion", None), ("uppsägningar på redaktioner", None),
+        ("zamknięcie lokalnej gazety", None), ("zwolnienia w redakcjach", None),
+        ("закрытие местной газеты", None), ("сокращения в редакциях", None),
+        ("地方报纸 停刊", None), ("地方紙 休刊", None),
+        ("新聞社 人員削減", None), ("新闻编辑部 裁员", None),
+        ("언론사 구조조정", None), ("지역 신문 폐간", None),
+    ],
+    "killings": [
+        ("gazeteci öldürüldü", None), ("giornalista ucciso", None),
+        ("impunidad asesinato periodista", None), ("impunidade jornalista", None),
+        ("impunité meurtre de", None), ("jornalista assassinado", None),
+        ("journalist getötet", None), ("journaliste tué", None),
+        ("jurnalis dibunuh", None), ("muhabir vuruldu", None),
+        ("mwandishi wa habari", None), ("periodista asesinado", None),
+        ("reporter abattu", None), ("reporter assassinato", None),
+        ("reporter erschossen", None), ("reportero muerto a", None),
+        ("repórter morto a", None), ("straflosigkeit mord journalist", None),
+        ("wartawan tewas ditembak", None), ("δολοφονία δημοσιογράφου", None),
+        ("журналист убит", None), ("репортёр застрелен", None),
+        ("إفلات من العقاب", None), ("اغتيال مراسل", None),
+        ("مقتل صحفي", None), ("पत्रकार की हत्या", None),
+        ("रिपोर्टर की गोली", None), ("প্রতিবেদক হত্যা", None),
+        ("সাংবাদিক নিহত", None),
+    ],
+    "ownership": [
+        ("concentración de medios", None), ("concentration des médias", None),
+        ("concentrazione dei media", None), ("concentração dos media", None),
+        ("fusion de médias", None), ("fusione editoriale", None),
+        ("fusión de medios", None), ("fusão de meios", None),
+        ("fuzja medialna", None), ("gazeta kupiona przez", None),
+        ("gazete satın alındı", None), ("giornale acquistato da", None),
+        ("jornal comprado por", None), ("journal racheté par", None),
+        ("koncentracja mediów", None), ("konsentrasi kepemilikan media", None),
+        ("krant gekocht door", None), ("media dibeli konglomerat", None),
+        ("mediaconcentratie", None), ("mediafusie toezichthouder", None),
+        ("mediefusion", None), ("mediekoncentration", None),
+        ("medienfusion kartellamt", None), ("medienkonzentration", None),
+        ("medya birleşmesi", None), ("medyada tekelleşme", None),
+        ("periódico comprado por", None), ("tidning köpt av", None),
+        ("zeitung von milliardär", None), ("εφημερίδα εξαγοράστηκε", None),
+        ("συγκέντρωση μέσων ενημέρωσης", None), ("газета куплена миллиардером", None),
+        ("газету купив мільярдер", None), ("злиття медіакомпаній", None),
+        ("концентрация сми", None), ("концентрація змі", None),
+        ("слияние медиакомпаний", None), ("اندماج إعلامي", None),
+        ("تركز ملكية الإعلام", None), ("شراء صحيفة رجل", None),
+        ("メディア集中", None), ("传媒合并 监管", None),
+        ("報道機関 統合", None), ("媒体集中", None),
+        ("报纸被收购 富豪", None), ("新聞社 買収", None),
+        ("미디어 합병", None), ("신문사 인수", None),
+        ("언론 소유 집중", None),
+    ],
+    "pressfreedom": [
+        ("basın özgürlüğü raporu", None), ("basını kısıtlayan yasa", None),
+        ("dziennikarze pod presją", None), ("gazeteciler baskı altında", None),
+        ("gesetz schränkt presse", None), ("giornalisti sotto pressione", None),
+        ("jornalistas sob pressão", None), ("journalisten onder druk", None),
+        ("journalisten unter druck", None), ("journalister under press", None),
+        ("journalistes sous pression", None), ("jurnalis ditekan", None),
+        ("kebebasan pers laporan", None), ("legge bavaglio", None),
+        ("lei que restringe", None), ("ley que restringe", None),
+        ("liberdade de imprensa", None), ("libertad de prensa", None),
+        ("libertà di stampa", None), ("liberté de la", None),
+        ("loi restreignant la", None), ("nhà báo bị", None),
+        ("periodistas bajo presión", None), ("persvrijheid rapport", None),
+        ("pressefreiheit bericht", None), ("pressfrihet rapport", None),
+        ("tự do báo", None), ("uhuru wa vyombo", None),
+        ("undang-undang membatasi pers", None), ("ustawa ograniczająca media", None),
+        ("waandishi wa habari", None), ("wet beperkt pers", None),
+        ("wolność prasy raport", None), ("ελευθερία του τύπου", None),
+        ("πιέσεις σε δημοσιογράφους", None), ("давление на журналистов", None),
+        ("закон обмежує змі", None), ("закон ограничивает сми", None),
+        ("свобода преси звіт", None), ("свобода прессы доклад", None),
+        ("тиск на журналістів", None), ("آزادی مطبوعات گزارش", None),
+        ("حرية الصحافة تقرير", None), ("ضغوط على الصحفيين", None),
+        ("فشار بر روزنامه‌نگاران", None), ("قانون يقيد الصحافة", None),
+        ("पत्रकारों पर दबाव", None), ("प्रेस की स्वतंत्रता", None),
+        ("সংবাদপত্রের স্বাধীনতা প্রতিবেদন", None), ("সাংবাদিকদের ওপর চাপ", None),
+        ("นักข่าวถูกกดดัน", None), ("เสรีภาพสื่อ รายงาน", None),
+        ("ジャーナリストへの圧力", None), ("報道の自由度 ランキング", None),
+        ("報道規制 法案", None), ("新闻自由 指数", None),
+        ("记者受压", None), ("限制报道 法律", None),
+        ("기자 압박", None), ("언론 규제 법안", None),
+        ("언론 자유 지수", None),
+    ],
+    "statedisinfo": [
+        ("campagna di disinformazione", None), ("campagne de désinformation", None),
+        ("campanha de desinformação", None), ("campaña de desinformación", None),
+        ("comportamento inautêntico coordenado", None), ("comportamiento inauténtico coordinado", None),
+        ("comportement inauthentique coordonné", None), ("devlet destekli dezenformasyon", None),
+        ("fabbrica di troll", None), ("farma trolli", None),
+        ("fazenda de trolls", None), ("ferme à trolls", None),
+        ("granja de trolls", None), ("kampanye disinformasi negara", None),
+        ("koordiniertes unauthentisches verhalten", None), ("pasukan siber buzzer", None),
+        ("państwowa kampania dezinformacyjna", None), ("staatliche desinformationskampagne", None),
+        ("troll çiftliği", None), ("trollfabrik", None),
+        ("κρατική εκστρατεία παραπληροφόρησης", None), ("φάρμα τρολ", None),
+        ("государственная дезинформация кампания", None), ("державна дезінформаційна кампанія", None),
+        ("фабрика троллей", None), ("фабрика тролів", None),
+        ("حملة تضليل حكومية", None), ("مزرعة ذباب إلكتروني", None),
+        ("トロールファーム", None), ("国家 偽情報 工作", None),
+        ("国家 虚假信息 行动", None), ("网军 水军", None),
+        ("국가 주도 허위정보", None), ("댓글 조작 조직", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(LOCAL_TERMS.get(_tid, []))
+
+# ------------------------------------------------------------------
+# Subjects this wire had a name for and never asked about.
+#
+# The terms below were already here and were well written; what was
+# missing was any query aimed at them, so they held zero stories
+# however much the world published. These are the phrases from the
+# queries now added, so what is fetched can be filed.
+# ------------------------------------------------------------------
+FILL_TERMS = {
+    "framing": [
+        ("cobertura deshumanizante análisis", None), ("cobertura desumanizante análise", None),
+        ("copertura disumanizzante analisi", None), ("couverture déshumanisante analyse", None),
+        ("entmenschlichende berichterstattung analyse", None), ("estudio sobre el", None),
+        ("estudo sobre o", None), ("studie zur medialen", None),
+        ("studio sul framing", None), ("étude sur le", None),
+        ("исследование медийной подачи", None), ("обесчеловечивающее освещение анализ", None),
+        ("去人性化 报道 分析", None), ("報道 フレーミング 研究", None),
+        ("媒体 框架 研究", None), ("非人間化 報道 分析", None),
+        ("비인간화 보도 분석", None), ("언론 프레이밍 연구", None),
+    ],
+    "softnews": [
+        ("anteil weicher themen", None), ("boulevardisierung der nachrichten", None),
+        ("información blanda desplaza", None), ("information de divertissement", None),
+        ("informação leve desloca", None), ("notizie leggere al", None),
+        ("peso de la", None), ("peso del gossip", None),
+        ("peso do entretenimento", None), ("poids du people", None),
+        ("ニュースの軟化", None), ("娱乐报道 占比 研究", None),
+        ("新闻娱乐化", None), ("芸能報道 割合 調査", None),
+        ("연성 뉴스 비중", None), ("연예 보도 비율", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(FILL_TERMS.get(_tid, []))
+
+
+# --------------------------------------------------------------------------
+# The same subjects in the languages this wire's own queries ask in, derived
+# from those queries and filed under the subject each query's label names. The
+# gate above was written in English; the queries were translated and it was
+# not, so three quarters of what the wire fetched could not be recognised once
+# it arrived. Generated — edit topics_multilingual.json, or delete the file to
+# turn this off.
+# --------------------------------------------------------------------------
+_EXTRA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "topics_multilingual.json")
+if os.path.exists(_EXTRA_PATH):
+    with open(_EXTRA_PATH, encoding="utf-8") as _fh:
+        _EXTRA = json.load(_fh)
+    TOPICS = [(tid, label, terms + [(t, g) for t, g in _EXTRA.get(tid, [])])
+              for tid, label, terms in TOPICS]
+
 TOPICS_C = [(tid, label, [(_compile(t), _compile_all(g) if g else None) for t, g in terms])
             for tid, label, terms in TOPICS]
 GEO3_C = [(rid, rlabel, [(sid, slabel, [(pid, plabel, _compile_all(terms))
@@ -1544,19 +1811,91 @@ def scene_first(text, places):
         (scene if _is_scene(text, _first_pos(text, terms.get(pid, []))) else rest).append(pid)
     return scene + rest
 
-def point_for(text, places, subs, regions):
-    """The most specific point a story resolved to: a named sub-national place
-    if there is one, otherwise the country, otherwise the subregion or region.
-    Returns (label_or_None, point_or_None)."""
+
+# --------------------------------------------------------------------------
+# The gazetteer answers with a country; this wire's taxonomy is keyed on ids
+# whose leading token is that country's ISO-2. Filing a placed story under its
+# region is therefore a lookup, not a guess. Where a country is split across
+# several places, only region and subregion are filled: which of the places a
+# story belongs to is a question the country code cannot answer.
+# --------------------------------------------------------------------------
+ISO_REGION = {}
+for _rid, _rlabel, _subs in GEO3:
+    for _sid, _slabel, _places in _subs:
+        for _pid, _plabel, _terms in _places:
+            _iso = _pid.split("-")[0].lower()
+            if len(_iso) == 2:
+                ISO_REGION.setdefault(_iso, (_rid, _sid))
+
+
+def file_by_country(row, cc):
+    """Put a gazetteer-placed story in its region, if the wire has one."""
+    if not cc:
+        return
+    hit = ISO_REGION.get(str(cc).lower())
+    if not hit:
+        return
+    rid, sid = hit
+    if not row.get("w") or row["w"] == ["unlocated"]:
+        row["w"] = [rid]
+    if not row.get("sr") or row["sr"] == ["unlocated"]:
+        row["sr"] = [sid]
+
+
+
+def country_for(raw, locale=None):
+    """The ISO-2 the placement resolved to, or None."""
+    if not _GAZETTEER:
+        return None
+    try:
+        return galaxy_places.resolve_full(raw, locale)[4]
+    except Exception:
+        return None
+
+
+def point_for(text, places, subs, regions, locale=None, raw=None):
+    """The most specific point a story resolved to.
+
+    The order is deliberate. This wire's own curated table goes first: it holds
+    the places this subject actually turns up and the country list it was
+    written against, and it beats a general gazetteer on its own ground. The
+    shared gazetteer follows but only overrides at the settlement level, so a
+    headline naming Kharkiv pins on Kharkiv rather than the middle of Ukraine,
+    while a country reading from this wire's own table still wins over a
+    country reading from the gazetteer. Then the bodies that stand for a
+    jurisdiction without naming it — EFSA is a European story, ANVISA a
+    Brazilian one. Last, and weakest, the country the source itself reports
+    from.
+
+    Returns (label_or_None, point_or_None, approx). approx is True only for
+    that last case, where nothing in the story placed it and the point is the
+    reporting locale rather than the scene. The page draws those hollow.
+    """
     label, point = precise_for(text)
     if point:
-        return label, point
+        return label, point, False
+
+    glabel, gpoint, grank = None, None, -1
+    if _GAZETTEER:
+        glabel, gpoint, grank, _approx = galaxy_places.resolve_ranked(raw or text)
+        if grank == 3:
+            return glabel, gpoint, False
+
     places = scene_first(text, places)
     for level in (places, subs, regions):
         for pid in level:
             if pid in COORDS:
-                return None, COORDS[pid]
-    return None, None
+                return None, COORDS[pid], False
+
+    if gpoint:
+        return glabel, gpoint, False
+
+    if _GAZETTEER and locale:
+        llabel, lpoint, _lrank, lapprox = galaxy_places.resolve_ranked("", locale)
+        if lpoint:
+            return llabel, lpoint, lapprox
+
+    return None, None, False
 
 
 def load_sources():
@@ -1570,13 +1909,16 @@ def load_sources():
         for loc in cfg.get(block, []):
             srcs.append({"name": prefix + loc["label"], "lang": loc["lang"],
                          "standing": loc["standing"], "region": loc["standing"],
-                         "kind": "news", "url": build_gnews_url(loc),
+                         "kind": "news", "url": build_gnews_url(loc), "gl": loc.get("gl"),
                          "query": loc.get("query", "")})
     return srcs, cfg
 
 
 def run(dry_run=False, fixtures=None):
+    global DEADLINE
     sources, cfg = load_sources()
+    if not fixtures:
+        DEADLINE = time.monotonic() + READ_BUDGET_MIN * 60
     print("Reading %d wires…" % len(sources))
 
     def read(src):
@@ -1636,7 +1978,12 @@ def run(dry_run=False, fixtures=None):
                 row["w"] = regions
                 row["sr"] = subs
                 row["pl"] = places
-                row["pn"], row["ll"] = point_for(text, places, subs, regions)
+                row["gl"] = src.get("gl")
+                _raw = (row["t"] or "") + " " + (row.get("s") or "")
+                row["pn"], row["ll"], row["pa"] = point_for(
+                    text, places, subs, regions, src.get("gl"), _raw)
+                if row["ll"]:
+                    file_by_country(row, country_for(_raw, src.get("gl")))
                 row["p"] = total
                 row["y"] = reasons
                 row["st"] = src["standing"]
@@ -1649,8 +1996,23 @@ def run(dry_run=False, fixtures=None):
 
     fresh_urls = {canon_url(i["u"]) for i in items}
     for row in previous:
-        if "x" in row:
-            absorb(row)
+        if "x" not in row:
+            continue
+        # A retained story is placed again rather than carried forward with the
+        # answer it happened to get the day it was first read. RETAIN_DAYS is
+        # 45, so without this a change to the placement layer takes a month and
+        # a half to reach the map, and a story never re-fetched keeps its first
+        # answer for good. Rows already holding a point resolved from their own
+        # text are left alone; only the unplaced and the source-country
+        # approximations are reconsidered.
+        if not row.get("ll") or row.get("pa"):
+            _raw = ((row.get("t") or "") + " " + (row.get("s") or ""))
+            row["pn"], row["ll"], row["pa"] = point_for(
+                _raw.lower(), row.get("pl") or [], row.get("sr") or [],
+                row.get("w") or [], row.get("gl"), _raw)
+            if row["ll"]:
+                file_by_country(row, country_for(_raw, row.get("gl")))
+        absorb(row)
 
     cutoff = int(time.time() * 1000) - RETAIN_DAYS * 86400000
     items = [i for i in items if (i.get("d") or cutoff + 1) >= cutoff]
